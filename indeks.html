@@ -1,0 +1,81 @@
+<?php
+// Definisi variabel PHP untuk konten dinamis
+$title = "Perbankan News";
+$news_header = "PERBANKAN NEWS";
+$main_title = "INDUSTRI PERBANKAN DI INDONESIA";
+$news_content = "Otoritas Jasa Keuangan (OJK) Republik Indonesia melaporkan bahwa kinerja industri perbankan Indonesia selama 2022 tetap terjaga baik dan tumbuh positif, serta mampu menahan tekanan perekonomian global.";
+$button_text = "Pelajari lebih lanjut";
+$image_src = "BANK.jpg";
+$image_alt = "Bank";
+$text_display = "Mulai membaca";
+$button_js_text = "Klik Saya";
+$js_new_text = "Selamat Datang";
+?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?php echo $title; ?></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .news-header {
+            color: rgb(241, 249, 250);
+            background-color: rgb(82, 117, 117);
+            padding: 10px 20px;
+            display: inline-block;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        .news-text {
+            text-align: justify;
+        }
+        .btn-learn {
+            background-color: rgb(255, 150, 13);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .btn-learn:hover {
+            background-color: rgb(230, 120, 10);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <h4 class="news-header"><?php echo $news_header; ?></h4>
+
+        <div class="row align-items-center mt-4">
+            <div class="col-lg-6 col-md-12">
+                <h1 class="text-primary"><?php echo $main_title; ?></h1>
+                <p class="news-text">
+                    <?php echo $news_content; ?>
+                </p>
+                <button class="btn-learn mt-3"><?php echo $button_text; ?></button>
+            </div>
+
+            <div class="col-lg-6 col-md-12 text-center mt-4 mt-lg-0">
+                <img src="<?php echo $image_src; ?>" alt="<?php echo $image_alt; ?>" class="img-fluid rounded shadow">
+            </div>
+        </div>
+
+        <!-- Tambahan Elemen dan Tombol -->
+        <div class="text-center mt-5">
+            <p id="text-display"><?php echo $text_display; ?></p>
+            <button class="btn btn-primary" onclick="ubahTeks()"> <?php echo $button_js_text; ?> </button>
+        </div>
+    </div>
+
+    <script>
+        function ubahTeks() {
+            document.getElementById("text-display").innerText = "<?php echo $js_new_text; ?>";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
